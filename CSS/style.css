@@ -54,3 +54,30 @@ button {
 button:hover {
   background-color: #333;
 }
+
+    header {
+      display: flex;
+      justify-content: space-between; /* Links & rechts aufteilen */
+      align-items: center;            /* Vertikal zentrieren */
+      padding: 10px 20px;
+      background-color: white;
+      border-bottom: 2px solid #ccc;
+      font-family: Arial;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      font-size: 20px;
+      font-weight: bold;
+    }
+
+    .logo span {
+      margin-left: 8px; /* Abstand zwischen Emoji und Text */
+    }
+
+    a{
+        color: black;
+        text-decoration: none;
+        margin-left: 10px;
+    }
