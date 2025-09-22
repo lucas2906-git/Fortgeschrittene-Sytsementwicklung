@@ -6,7 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Event Planner</title>
     <link rel="stylesheet" href="CSS/style.css">
-    <header>
+</head>
+
+<header>
         <div class="logo">
          &#x1F389; 
          <span>Event Planner</span>
@@ -15,6 +17,44 @@
             <a href="#">Start</a>
             <a href="#">Kontakt</a>
         </nav>
-    </header>
+</header>
 
+<body>
+<div class="form-container">
+    <h2>Neues Event erstellen</h2>
+    <form>
+      <input type="text" placeholder="Titel" required />
+    <link rel="stylesheet" href="/CSS/style.css">
+    <!-- Eingabe Datum entweder über Eingabe oder Klick auf Kalender -->
+      <input type="date" required />
+
+      <textarea placeholder="Beschreibung" required ></textarea>
+      
+      <button type="submit">Hinzufügen</button>
+    </form>
+</div>
+<div id="eventlist">
+    <label for="sort">Sortieren nach:</label>
+    <select name="sort" id="sort">
+        <option value="">Datum aufsteigend</option>
+        <option value="">Datum absteigend</option>
+        <option value="">A-Z aufsteigend</option>
+        <option value="">A-Z absteigend</option>
+    </select>
+    <input type="search" name="searchEvent" id="searchEvent" placeholder="Search Event"> <br>
+    
+    <ul id="events"> 
+        
+    </ul>
+
+
+</div>
+
+</body>
+
+<footer>
+    <p>@ 2025 Event Planer</p>
+    
+
+</footer>
 </html>
