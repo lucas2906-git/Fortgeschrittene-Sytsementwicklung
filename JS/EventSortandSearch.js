@@ -7,6 +7,7 @@ function sortDateascending() {
         const dateB = new Date(b.getAttribute("data-date"));
         return dateA - dateB;
     });}
+    
 function sortDatedescending() {}
 function sortTitleascending() {}
 function sortTitledescending() {}

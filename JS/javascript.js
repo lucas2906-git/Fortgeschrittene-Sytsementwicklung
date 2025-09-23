@@ -1,1 +1,0 @@
-function addEvent(element, event, handler) {}
