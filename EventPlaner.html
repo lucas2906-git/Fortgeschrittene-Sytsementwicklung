@@ -10,6 +10,8 @@
     <script src="JS/EventSortandSearch.js" defer> </script>
 </head>
 
+<!--Websitenkopf mit Logo, Titel und Navigation--> 
+
 <header>
         <div class="logo">
          &#x1F389; 
@@ -21,13 +23,13 @@
         </nav>
 </header> <br> <br>
 
+<!-- Box zum hinzufügen von neuen Events --> 
 <body>
 <div class="form-container">
     <h2>Neues Event erstellen</h2>
     <form id="eventForm">
       <input id="title" type="text" placeholder="Titel" required />
     
-    <!-- Eingabe Datum entweder über Eingabe oder Klick auf Kalender -->
       <input id="date" type="date" required />
 
       <textarea id="description" placeholder="Beschreibung" required ></textarea>
@@ -36,16 +38,17 @@
     </form>
 </div> <br> <br>
 
+<!--Liste der Events mit Sortierung und Suche --> 
 <div class="form-container" id="eventlist">
     
     <label for="sort">Sortieren nach:</label>
     <select name="sort" id="sort">
-        <option value="">Datum aufsteigend</option>
+        <option value="" onchange="sortDateascending()">Datum aufsteigend</option>
         <option value="">Datum absteigend</option>
         <option value="">A-Z aufsteigend</option>
         <option value="">A-Z absteigend</option>
     </select>
-    <input type="search" name="searchEvent" id="searchEvent" placeholder="Search Event"> <br>
+    <input type="search" name="searchEvent" id="searchEvent" placeholder="Suche Event..."> <br>
     
     <ul id="events"> 
         
