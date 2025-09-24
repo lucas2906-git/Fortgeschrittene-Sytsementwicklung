@@ -91,3 +91,17 @@ form button:hover {
   list-style-type: none;
   padding-left: 0;
 }
+#sort {
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  padding: 0.5rem;
+  font-size: 1rem;
+}
+
+#searchEvent {
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  padding: 0.5rem;
+  font-size: 1rem;
+  margin-left: 0.5rem; 
+}
