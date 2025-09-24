@@ -23,4 +23,13 @@ function searchEvent() {
     const input = document.getElementById("searchEvent").value.toLowerCase();
     const list = document.getElementById("events");
     const items = list.getElementsByTagName("li");
+
+    for (let item of items) {
+        const text = item.innerText.toLowerCase();
+        if (text.includes(input)) {
+            item.style.display = "";
+        } else {
+            item.style.display = "none";
+        }
+    }
 }
