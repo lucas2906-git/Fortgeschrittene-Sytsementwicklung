@@ -16,4 +16,5 @@
             ${description}<br>
         </li>
     `;
+    document.getElementById('eventForm').reset(); // Formular zurücksetzen
 });
