@@ -25,49 +25,49 @@
 
 <!-- Box zum hinzufügen von neuen Events --> 
 <body>
-<div class="form-container">
-    <h2>Neues Event erstellen</h2>
-    <form id="eventForm">
-      <input id="title" type="text" placeholder="Titel" required />
-    
-      <input id="date" type="date" required />
+    <main class="content">
+        <section class="container-input">
+            <div class="form-container">
+                <h2>Neues Event erstellen</h2>
+                <form id="eventForm">
+                  <input id="title" type="text" placeholder="Titel" required />
+                
+                  <input id="date" type="date" required />
 
-      <textarea id="description" placeholder="Beschreibung" required ></textarea>
-      
-      <button type="submit">Hinzufügen</button>
-    </form>
-</div> <br> <br>
+                  <textarea id="description" placeholder="Beschreibung" required ></textarea>
+                
+                  <button type="submit">Hinzufügen</button>
+                </form>
+            </div>
+        </section>
 
-<!--Liste der Events mit Sortierung und Suche --> 
-<div class="form-container" id="eventlist">
-    
-    <label for="sort">Sortieren nach:</label>
-    <select name="sort" id="sort">
-        <option value="" onchange="sortDateascending()">Datum aufsteigend</option>
-        <option value="">Datum absteigend</option>
-        <option value="">A-Z aufsteigend</option>
-        <option value="">A-Z absteigend</option>
-    </select>
-    <input type="search" name="searchEvent" id="searchEvent" placeholder="Suche Event..."> <br>
-    
-    <ul id="events"> 
-        <il>
-            <Strong> Rock am Ring</Strong><br>
-            <Strong> 07.06.2025 </Strong> <br>
-             Eines der größten und bekanntesten Musikfestivals in Deutschland mit internationalen Top-Acts. Rock, Pop und mehr.
-        </il>
-        <il>
-            <Strong> Oktoberfest</Strong><br>
-            <Strong> 21.09.2024 </Strong><br>
-             Das weltberühmte Volksfest in München mit traditioneller bayerischer Musik, Trachten und natürlich Bier.
-        </il>
+        <!--Liste der Events mit Sortierung und Suche --> 
+        <section class="container-output" id="eventlist">
+                <label for="sort">Sortieren nach:</label>
+                <select name="sort" id="sort">
+                    <option value="" onchange="sortDateascending()">Datum aufsteigend</option>
+                    <option value="">Datum absteigend</option>
+                    <option value="">A-Z aufsteigend</option>
+                    <option value="">A-Z absteigend</option>
+                </select>
+                <input type="search" name="searchEvent" id="searchEvent" placeholder="Suche Event..."> <br>
 
-        <!-- Events werden hier dynamisch eingefügt -->
-    </ul>
+                <ul id="events"> 
+                    <il>
+                        <Strong> Rock am Ring</Strong><br>
+                        <Strong> 07.06.2025 </Strong> <br>
+                         Eines der größten und bekanntesten Musikfestivals in Deutschland mit internationalen Top-Acts. Rock, Pop und mehr.
+                    </il>
+                    <il>
+                        <Strong> Oktoberfest</Strong><br>
+                        <Strong> 21.09.2024 </Strong><br>
+                         Das weltberühmte Volksfest in München mit traditioneller bayerischer Musik, Trachten und natürlich Bier.
+                    </il>
 
-
-</div>
-
+                    <!-- Events werden hier dynamisch eingefügt -->
+                </ul>
+        </section>
+    </main>
 </body>
 
 <footer>
