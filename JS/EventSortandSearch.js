@@ -7,21 +7,7 @@ function sortEvents() {
      
     switch (sortOption) {
                 
-        case "dateAscending":
-            itemsArr.sort((a, b) => {
-                let dateA, dateB;
-                const dateArrA = a.querySelector(".date").innerText.split('.');
-                const dateArrB = b.querySelector(".date").innerText.split('.');
-                    
-                    dateA = new Date(dateArrA[2], dateArrA[1] - 1, dateArrA[0]);
-                    dateB = new Date(dateArrB[2], dateArrB[1] - 1, dateArrB[0]);
-
-                    return dateA - dateB;  
-                });
-
-                itemsArr.forEach(item => list.appendChild(item));
-        break;
-
+        case "dateAscending" :
         case "dateDescending":
             itemsArr.sort((a, b) => {
                 let dateA, dateB;
@@ -30,35 +16,34 @@ function sortEvents() {
                     
                     dateA = new Date(dateArrA[2], dateArrA[1] - 1, dateArrA[0]);
                     dateB = new Date(dateArrB[2], dateArrB[1] - 1, dateArrB[0]);
-
-                    return dateB - dateA;  
+                    if (sortOption === "dateAscending"){
+                    return dateA - dateB;
+                    }
+                    else {
+                    return dateB - dateA;
+                    } 
                 });
 
                 itemsArr.forEach(item => list.appendChild(item));
-        break
-
-        case "titleAscending":
-            itemsArr.sort((a, b) => {
-                const titleA = a.querySelector(".title").innerText.toLowerCase();
-                const titleB = b.querySelector(".title").innerText.toLowerCase();
-                if (titleA < titleB) return -1;
-                if (titleA > titleB) return 1;
-                return 0;
-            });
-
-            itemsArr.forEach(item => list.appendChild(item));
         break;
 
-
+        case "titleAscending":
         case "titleDescending":
             itemsArr.sort((a, b) => {
                 const titleA = a.querySelector(".title").innerText.toLowerCase();
                 const titleB = b.querySelector(".title").innerText.toLowerCase();
-                if (titleA > titleB) return -1;
-                if (titleA < titleB) return 1;
-                return 0;
-            }
-            );
+
+                    if (sortOption === "titleAscending"){
+                    if (titleA < titleB) return -1;
+                    if (titleA > titleB) return 1;
+                    return 0;
+                    } else {
+                    if (titleA > titleB) return -1;
+                    if (titleA < titleB) return 1;
+                    return 0;
+                    }
+            });
+
             itemsArr.forEach(item => list.appendChild(item));
         break;
 
