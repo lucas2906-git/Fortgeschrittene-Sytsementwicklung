@@ -4,6 +4,8 @@
     const title = document.getElementById('title').value;
     const date = document.getElementById('date').value;
     const description = document.getElementById('description').value;
+    const partsArr = date.split('-'); //  Teile das Datum in seine Bestandteile auf und speichere sie in einem Array
+    const correctFormat = `${partsArr[2]}.${partsArr[1]}.${partsArr[0]}`; //  Setze das Datum im gewünschten Format zusammen
 
     event.preventDefault(); // Verhindert das automatische Neuladen der Seite
 
@@ -11,8 +13,8 @@
 
     document.getElementById('events').innerHTML += `
         <li>
-            <strong>${title}</strong><br>
-            <strong>${date}</strong><br>
+            <strong class="title">${title}</strong><br>
+            <strong class="date">${correctFormat}</strong><br>
             ${description}<br>
         </li>
     `;

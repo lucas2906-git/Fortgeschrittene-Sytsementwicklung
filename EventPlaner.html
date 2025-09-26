@@ -44,11 +44,11 @@
         <!--Liste der Events mit Sortierung und Suche --> 
         <section class="container-output" id="eventlist">
                 <label for="sort">Sortieren nach:</label>
-                <select name="sort" id="sort">
-                    <option value="" onchange="sortDateascending()">Datum aufsteigend</option>
-                    <option value="">Datum absteigend</option>
-                    <option value="">A-Z aufsteigend</option>
-                    <option value="">A-Z absteigend</option>
+                <select name="sort" id="sort" onchange="sortEvents()">
+                    <option value="dateAscending">Datum aufsteigend</option>
+                    <option value="dateDescending">Datum absteigend</option>
+                    <option value="titleAscending">A-Z aufsteigend</option>
+                    <option value="titleDescending">A-Z absteigend</option>
                 </select>
                 <input type="search" name="searchEvent" id="searchEvent" placeholder="Suche Event..." oninput="searchEvent()"> <br>
 
@@ -56,23 +56,23 @@
 
                 <ul id="events"> 
                     <li>
-                        <Strong> Rock am Ring</Strong><br>
-                        <Strong> 07.06.2025 </Strong> <br>
+                        <Strong class="title"> Rock am Ring</Strong><br>
+                        <Strong class="date">07.06.2025</Strong> <br>
                          Eines der größten und bekanntesten Musikfestivals in Deutschland mit internationalen Top-Acts. Rock, Pop und mehr.
                     </li>
                     <li>
-                        <Strong> Oktoberfest</Strong><br>
-                        <Strong> 21.09.2024 </Strong><br>
+                        <Strong class="title"> Oktoberfest</Strong><br>
+                        <Strong class="date">21.09.2024</Strong><br>
                          Das weltberühmte Volksfest in München mit traditioneller bayerischer Musik, Trachten und natürlich Bier.
                     </li>
                     <li>    
-                        <Strong> Wacken Open Air</Strong><br>
-                        <Strong> 15.02.2025 </Strong><br>
+                        <Strong class="title"> Wacken Open Air</Strong><br>
+                        <Strong class="date">15.02.2025</Strong><br>
                             Das größte Heavy-Metal-Festival der Welt, das jährlich in Wacken, Schleswig-Holstein, stattfindet.
                     </li>
                     <li>    
-                        <Strong> Splash! </Strong><br>
-                        <Strong> 10.02.2025 </Strong><br>
+                        <Strong class="title"> Splash! </Strong><br>
+                        <Strong class="date">10.02.2025</Strong><br>
                             Ein Festival, das sich auf Hip-Hop, Rap und Urban Music spezialisiert hat und in Ferropolis, der "Stadt aus Eisen", stattfindet.
                     </li>
 
