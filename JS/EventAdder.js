@@ -1,4 +1,4 @@
-
+// Gruppe 1
     document.getElementById('eventForm').addEventListener('submit', function(event){
 
     const title = document.getElementById('title').value;
