@@ -14,10 +14,10 @@
     document.getElementById('events').innerHTML += `
         <li>
             <strong class="title">${title}</strong><br>
-            <strong class="date">${correctFormat}</strong><br>
+            <strong class="date">Datum: ${correctFormat}</strong><br>
             ${description}<br>
         </li>
     `;
     document.getElementById('eventForm').reset(); // Formular zurücksetzen
-    
+    sortEvents(); // Events nach dem Hinzufügen sortieren
 });
