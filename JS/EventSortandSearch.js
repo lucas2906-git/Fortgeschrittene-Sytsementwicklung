@@ -50,15 +50,21 @@ function sortEvents() {
 
 
         case "titleDescending":
+            itemsArr.sort((a, b) => {
+                const titleA = a.querySelector(".title").innerText.toLowerCase();
+                const titleB = b.querySelector(".title").innerText.toLowerCase();
+                if (titleA > titleB) return -1;
+                if (titleA < titleB) return 1;
+                return 0;
+            }
+            );
+            itemsArr.forEach(item => list.appendChild(item));
+        break;
 
-
-
-    
-    
-    
-};}
-
-
+        default:
+            break;
+};
+}
 
 function searchEvent() {
     const input = document.getElementById("searchEvent").value.toLowerCase();
