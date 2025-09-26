@@ -47,6 +47,7 @@ h2 {
 }
 body {
   font-family: Arial;
+  line-height: 1.5;
 }
 .content {
   min-height: calc(100vh - 120px);
@@ -56,6 +57,9 @@ body {
   align-items: center;
   gap: 2rem;
   padding:2rem;
+}
+.title{
+  font-size: larger;
 }
 form {
   display: flex;
