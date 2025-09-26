@@ -14,7 +14,8 @@
     document.getElementById('events').innerHTML += `
         <li>
             <strong class="title">${title}</strong><br>
-            <strong class="date">${correctFormat}</strong><br>
+            <strong>Datum: </strong>
+            <time class="date">${correctFormat}</time><br>
             ${description}<br>
         </li>
     `;
