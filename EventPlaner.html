@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Event Planner</title>
     <link rel="stylesheet" href="CSS/style.css">
-    <script src="JS/EventManager.js" defer></script>
+    <script src="JS/EventAdder.js" defer></script>
     <script src="JS/EventSortandSearch.js" defer> </script>
 </head>
 
@@ -48,8 +48,8 @@
                 <select name="sort" id="sort" onchange="sortEvents()">
                     <option value="dateAscending">Datum aufsteigend</option>
                     <option value="dateDescending">Datum absteigend</option>
-                    <option value="titleAscending">A-Z aufsteigend</option>
-                    <option value="titleDescending">A-Z absteigend</option>
+                    <option value="titleAscending">Titel A-Z</option>
+                    <option value="titleDescending">Titel Z-A</option>
                 </select>
                 <input type="search" name="searchEvent" id="searchEvent" placeholder="Suche Event..." oninput="searchEvent()"> <br>
 
