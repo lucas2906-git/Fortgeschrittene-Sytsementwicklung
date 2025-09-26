@@ -106,3 +106,9 @@ form button:hover {
   font-size: 1rem;
   margin-left: 0.5rem; 
 }
+/*Footer*/
+footer {
+  text-align: center;
+  border-top: 1px solid #ccc;
+  color: #999999;
+}
