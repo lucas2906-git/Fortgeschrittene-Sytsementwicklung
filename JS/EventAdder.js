@@ -4,8 +4,8 @@
     const title = document.getElementById('title').value;
     const date = document.getElementById('date').value;
     const description = document.getElementById('description').value;
-    const partsArr = date.split('-'); //  Teile das Datum in seine Bestandteile auf und speichere sie in einem Array
-    const correctFormat = `${partsArr[2]}.${partsArr[1]}.${partsArr[0]}`; //  Setze das Datum im gewünschten Format zusammen
+    const partsArr = date.split('-'); 
+    const correctFormat = `${partsArr[2]}.${partsArr[1]}.${partsArr[0]}`; 
 
     event.preventDefault(); // Verhindert das automatische Neuladen der Seite
 
