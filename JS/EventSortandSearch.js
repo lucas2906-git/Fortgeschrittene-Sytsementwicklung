@@ -1,4 +1,5 @@
 // Gruppe 1
+
 function sortEvents() {
     const list = document.getElementById("events");
     const items = list.getElementsByTagName("li");
