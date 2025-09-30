@@ -6,10 +6,10 @@ function sortEvents() {
     const itemsArr = Array.from(items);
     const sortOption = document.getElementById("sort").value;
      
-    switch (sortOption) {
+   switch (sortOption) {
                 
-        case "dateAscending" :
-        case "dateDescending":
+    case "dateAscending" :
+    case "dateDescending":
             itemsArr.sort((a, b) => {
                 let dateA, dateB;
                 const dateArrA = a.querySelector(".date").innerText.split('.');
@@ -28,8 +28,8 @@ function sortEvents() {
                 itemsArr.forEach(item => list.appendChild(item));
         break;
 
-        case "titleAscending":
-        case "titleDescending":
+    case "titleAscending":
+    case "titleDescending":
             itemsArr.sort((a, b) => {
                 const titleA = a.querySelector(".title").innerText.toLowerCase();
                 const titleB = b.querySelector(".title").innerText.toLowerCase();
