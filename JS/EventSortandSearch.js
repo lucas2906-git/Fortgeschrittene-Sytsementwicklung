@@ -58,6 +58,7 @@ function searchEvent() {
     const list = document.getElementById("events");
     const items = list.getElementsByTagName("li");
 
+    // Durchlaufe alle Listenelemente und blende diejenigen ein, die den Suchbegriff enthalten
     for (let item of items) {
         const text = item.innerText.toLowerCase();
         if (text.includes(input)) {
