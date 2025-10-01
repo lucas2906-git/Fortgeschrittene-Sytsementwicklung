@@ -8,14 +8,14 @@ function sortEvents() {
      
    switch (sortOption) {
                 
-    case "dateAscending" :
-    case "dateDescending":
+    case "dateAscending" : //Datum aufsteigend
+    case "dateDescending": //Datum absteigend
             itemsArr.sort((a, b) => {
                 let dateA, dateB;
-                const dateArrA = a.querySelector(".date").innerText.split('.');
+                const dateArrA = a.querySelector(".date").innerText.split('.'); // Datum in ein array splitten
                 const dateArrB = b.querySelector(".date").innerText.split('.');
                     
-                    dateA = new Date(dateArrA[2], dateArrA[1] - 1, dateArrA[0]);
+                    dateA = new Date(dateArrA[2], dateArrA[1] - 1, dateArrA[0]); // gesplittetes Datum in ein Date-Objekt umwandeln
                     dateB = new Date(dateArrB[2], dateArrB[1] - 1, dateArrB[0]);
                     if (sortOption === "dateAscending"){
                     return dateA - dateB;
@@ -28,8 +28,8 @@ function sortEvents() {
                 itemsArr.forEach(item => list.appendChild(item));
         break;
 
-    case "titleAscending":
-    case "titleDescending":
+    case "titleAscending": //Titel aufsteigend
+    case "titleDescending": //Titel absteigend
             itemsArr.sort((a, b) => {
                 const titleA = a.querySelector(".title").innerText.toLowerCase();
                 const titleB = b.querySelector(".title").innerText.toLowerCase();
