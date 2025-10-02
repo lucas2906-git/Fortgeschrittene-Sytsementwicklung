@@ -3,11 +3,14 @@
 <head>
 <meta charset="UTF-8">
 <title>Robuster Event Planner Test</title>
+<script src="JS/EventAdder.js"></script>
+<script src="JS/EventSortandSearch.js"></script>
 </head>
 <body>
 
 <h1>Robuster Event Planner Test</h1>
 <p>Öffne die Konsole (F12) für die Ergebnisse.</p>
+
 
 <ul id="events">
     <li>
@@ -21,6 +24,30 @@
         Bier
     </li>
 </ul>
+
+<select name="sort" id="sort" onchange="sortEvents()">
+    <option value="dateAscending">Datum aufsteigend</option>
+    <option value="dateDescending">Datum absteigend</option>
+    <option value="titleAscending">Titel A-Z</option>
+    <option value="titleDescending">Titel Z-A</option>
+</select>
+
+<input type="search" id="searchEvent" placeholder="Suche..." oninput="searchEvent()">
+
+<script>
+console.log('=== ROBUSTER EVENT PLANNER TEST START ===');
+
+
+function safeTest(testName, fn) {
+    try {
+        fn();
+    } catch (e) {
+        console.log(`${testName}: FEHLER (${e.message})`);
+    }
+}
+
+console.log('=== ROBUSTER EVENT PLANNER TEST ENDE ===');
+</script>
 
 </body>
 </html>
