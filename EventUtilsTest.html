@@ -11,7 +11,7 @@
 <h1>Robuster Event Planner Test</h1>
 <p>Öffne die Konsole (F12) für die Ergebnisse.</p>
 
-
+<!-- Ul mit vorhandenen Events -->
 <ul id="events">
     <li>
         <strong class="title">Rock am Ring</strong><br>
@@ -25,6 +25,7 @@
     </li>
 </ul>
 
+<!-- Sortieren und Suche -->
 <select name="sort" id="sort" onchange="sortEvents()">
     <option value="dateAscending">Datum aufsteigend</option>
     <option value="dateDescending">Datum absteigend</option>
@@ -37,7 +38,7 @@
 <script>
 console.log('=== ROBUSTER EVENT PLANNER TEST START ===');
 
-
+// Hilfsfunktion, um Test sicher auszuführen
 function safeTest(testName, fn) {
     try {
         fn();
@@ -46,7 +47,47 @@ function safeTest(testName, fn) {
     }
 }
 
-console.log('=== ROBUSTER EVENT PLANNER TEST ENDE ===');
+//Event hinzufügen simulieren
+safeTest('Test 1: Event hinzufügen', () => {
+    const eventsUl = document.getElementById('events');
+    if (!eventsUl) throw new Error('#events fehlt');
+
+    const newEvent = {
+        title: 'Wacken Open Air',
+        date: '15.02.2025',
+        description: 'Metal Festival'
+    };
+
+    eventsUl.innerHTML += `
+        <li>
+            <strong class="title">${newEvent.title}</strong><br>
+            <strong>Datum: </strong><time class="date">${newEvent.date}</time><br>
+            ${newEvent.description}
+        </li>
+    `;
+
+    const lis = eventsUl.querySelectorAll('li');
+    if (lis.length === 3) console.log('Test 1: OK');
+    else throw new Error('Event nicht hinzugefügt');
+});
+
+//Sortieren Datum aufsteigend
+safeTest('Test 2: Sortieren Datum aufsteigend', () => {
+    if (typeof sortEvents !== 'function') throw new Error('sortEvents() fehlt');
+
+    const sortSelect = document.getElementById('sort');
+    if (!sortSelect) throw new Error('#sort fehlt');
+
+    sortSelect.value = 'dateAscending';
+    sortEvents();
+
+    const firstTitle = document.querySelector('#events li:first-child .title');
+    if (!firstTitle) throw new Error('erstes li fehlt');
+    if (firstTitle.innerText === 'Oktoberfest') console.log('Test 2: OK');
+    else throw new Error('Sortierung falsch');
+});
+
+console.log('TEST ENDE');
 </script>
 
 </body>
