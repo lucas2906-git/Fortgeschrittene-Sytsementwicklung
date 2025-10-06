@@ -25,7 +25,7 @@
     </li>
 </ul>
 
-<!-- Sortieren und Suche -->
+<!-- Sortieren + Suche -->
 <select name="sort" id="sort" onchange="sortEvents()">
     <option value="dateAscending">Datum aufsteigend</option>
     <option value="dateDescending">Datum absteigend</option>
@@ -47,7 +47,7 @@ function safeTest(testName, fn) {
     }
 }
 
-//Event hinzufügen simulieren
+// Event hinzufügen simulieren
 safeTest('Test 1: Event hinzufügen', () => {
     const eventsUl = document.getElementById('events');
     if (!eventsUl) throw new Error('#events fehlt');
@@ -71,7 +71,7 @@ safeTest('Test 1: Event hinzufügen', () => {
     else throw new Error('Event nicht hinzugefügt');
 });
 
-//Sortieren Datum aufsteigend
+// Sortieren Datum aufsteigend
 safeTest('Test 2: Sortieren Datum aufsteigend', () => {
     if (typeof sortEvents !== 'function') throw new Error('sortEvents() fehlt');
 
@@ -85,6 +85,47 @@ safeTest('Test 2: Sortieren Datum aufsteigend', () => {
     if (!firstTitle) throw new Error('erstes li fehlt');
     if (firstTitle.innerText === 'Oktoberfest') console.log('Test 2: OK');
     else throw new Error('Sortierung falsch');
+});
+
+// Sortieren Datum absteigend
+safeTest('Test 3: Sortieren Datum absteigend', () => {
+    if (typeof sortEvents !== 'function') throw new Error('sortEvents() fehlt');
+
+    document.getElementById('sort').value = 'dateDescending';
+    sortEvents();
+
+    const firstTitle = document.querySelector('#events li:first-child .title');
+    if (firstTitle && firstTitle.innerText === 'Rock am Ring') console.log('Test 3: OK');
+    else throw new Error('Sortierung falsch');
+});
+
+// Suche testen
+safeTest('Test 4: Suche nach "rock"', () => {
+    if (typeof searchEvent !== 'function') throw new Error('searchEvent() fehlt');
+
+    const searchInput = document.getElementById('searchEvent');
+    if (!searchInput) throw new Error('#searchEvent fehlt');
+
+    searchInput.value = 'rock';
+    searchEvent();
+
+    const visible = Array.from(document.querySelectorAll('#events li'))
+        .filter(li => li.style.display !== 'none');
+    if (visible.length === 1 && visible[0].querySelector('.title').innerText === 'Rock am Ring') {
+        console.log('Test 4: OK');
+    } else throw new Error('Suche falsch');
+});
+
+// Suche ohne Treffer
+safeTest('Test 5: Suche nach "xyz"', () => {
+    const searchInput = document.getElementById('searchEvent');
+    searchInput.value = 'xyz';
+    searchEvent();
+
+    const visible = Array.from(document.querySelectorAll('#events li'))
+        .filter(li => li.style.display !== 'none');
+    if (visible.length === 0) console.log('Test 5: OK');
+    else throw new Error('Suche falsch');
 });
 
 console.log('TEST ENDE');
